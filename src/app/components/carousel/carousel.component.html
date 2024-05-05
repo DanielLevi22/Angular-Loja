@@ -1,0 +1,17 @@
+<p-carousel 
+    [value]="products()" 
+    [numVisible]="4" 
+    [numScroll]="1" 
+    [circular]="false" 
+    [responsiveOptions]="responsiveOptions">
+    <ng-template let-product pTemplate="item"  >
+      <div class="relative mx-auto flex items-center justify-center">
+        <div class="">
+          <img [src]="product.url" alt="" class="h-[267px] w-[280px]">
+          <div class="mt-3">{{ product.name }}</div>
+          <div class="font-bold">R$ {{ product.preco }}</div>
+        </div>
+      </div>
+  </ng-template>
+  
+</p-carousel>

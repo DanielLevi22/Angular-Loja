@@ -30,6 +30,7 @@ export class ProductComponent implements OnInit{
   ngOnInit(): void {
     this.products.set(this.productService.getProducts()) 
   }
+  
   Like(productId: number) {
     this.products.update( olValue => 
       olValue.map(product => {

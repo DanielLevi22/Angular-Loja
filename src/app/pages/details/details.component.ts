@@ -7,7 +7,8 @@ import { DetailsproductComponent } from '../../components/detailsproduct/details
 import { DescriptionproductComponent } from '../../components/descriptionproduct/descriptionproduct.component';
 import { DetailsrecommendationsComponent } from '../../components/detailsrecommendations/detailsrecommendations.component';
 import { DetailsassessmentComponent } from '../../components/detailsassessment/detailsassessment.component';
-
+import { CarouselModule } from 'primeng/carousel';
+import { CarouselComponent } from '../../components/carousel/carousel.component';
 @Component({
   selector: 'app-details',
   standalone: true,
@@ -18,7 +19,8 @@ import { DetailsassessmentComponent } from '../../components/detailsassessment/d
     DescriptionproductComponent,
     DetailsrecommendationsComponent,
     CardcommentsComponent,
-    DetailsassessmentComponent
+    DetailsassessmentComponent,
+    CarouselComponent
   ],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss'
