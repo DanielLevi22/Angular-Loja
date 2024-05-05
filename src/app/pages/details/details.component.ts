@@ -13,7 +13,6 @@ import { DetailsassessmentComponent } from '../../components/detailsassessment/d
   standalone: true,
   imports: [
     HeaderComponent,
-    FooterComponent,
     ProductComponent,
     DetailsproductComponent,
     DescriptionproductComponent,

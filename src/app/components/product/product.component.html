@@ -1,6 +1,6 @@
 
 
-<div *ngFor="let product of products" class="p-2 relative">
+<div *ngFor="let product of products()" class="p-2 relative">
     <button class="absolute top-3 right-10" (click)="Like(product.id)">
         <lucide-icon name="heart" class="{{ product.like ? 'fill-red-500 stroke-red-500' : '' }}" ></lucide-icon>
     </button>

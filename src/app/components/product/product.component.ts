@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, signal } from '@angular/core';
 import { ProductsService, ProductsType } from '../../services/products/products.service';
 import {NgFor,NgClass} from '@angular/common';
 import { LucideAngularModule } from 'lucide-angular';
@@ -20,7 +20,7 @@ export class ProductComponent implements OnInit{
 
 
 
-  products:ProductsType[] = []
+  products = signal<ProductsType []>([])
 
 
 
@@ -28,15 +28,15 @@ export class ProductComponent implements OnInit{
   constructor(private productService: ProductsService) { }
 
   ngOnInit(): void {
-    this.products = this.productService.getProducts();
+    this.products.set(this.productService.getProducts()) 
   }
   Like(productId: number) {
-    this.products = this.products.map(product => {
+    this.products.update( olValue => 
+      olValue.map(product => {
       if (product.id === productId) {
         return { ...product, like: !product.like };
       }
       return product;
-    });
-
+    }))
   }
 }
