@@ -1,8 +1,7 @@
-import { AfterViewInit, Component } from '@angular/core';
-import {  ActivatedRoute, RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import {  RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,13 +15,12 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements  OnInit{
 
   public path = ''
 
-  constructor(private router: Router,private activatedRoute:ActivatedRoute) {}
-  ngAfterViewInit(): void {
-
+  constructor() {}
+  ngOnInit(): void {
     if (typeof window !== 'undefined') {
       this.path = window.location.pathname;
     }
